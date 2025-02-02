@@ -13,12 +13,13 @@ function changeIndDes(indval, indDesval){
 
 btn.addEventListener('click',()=>{
     let input=document.querySelector('#searchbox').value.trim();
+
     if (!input) {
         changeIndDes("", "Please enter an ingredient.");
         return;
     }
 
-
+    document.getElementById('searchbox').value="";
     fetch(url)
     .then((response)=>{
          return response.json();
